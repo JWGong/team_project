@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_URL = 'rango:login'
+LOGIN_URL = 'auth_login'
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,7 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 ]
+
+# If True, users can register.
+REGISTRATION_OPEN = True
+# If True, the user will be automatically logged in after registering.
+REGISTRATION_AUTO_LOGIN = True
+# The URL that Django redirects users to after logging in.
+LOGIN_REDIRECT_URL = 'rango:index'
+# The page users are directed to if they are not logged in.
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
